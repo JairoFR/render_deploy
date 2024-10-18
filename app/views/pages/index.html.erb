@@ -1,0 +1,23 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-2 d-none d-md-block">
+    <%= image_tag "image.jpg", alt: "Logo de la Aplicación", class: "img-fluid styled-image" %>
+  </div>
+  <div class="col-8 imagen_fondo">
+    <div class="row">
+      <% @characters.each do |card| %>
+        <div class="col-md-4 mb-4">
+          <div class="card magical-card" style="width: 100%; border-radius: 15px;">
+            <div class="card-body">
+              <h4 class="card-title font-weight-bold text-white"><%= card.name %></h4>
+              <p class="card-text text-white"><strong>Lugar de trabajo:</strong> <%= card.location %></p>
+              <p class="card-text text-white"><strong>Casa de estudio:</strong> <%= card.house %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-2 d-none d-md-block">
+    <%= image_tag "image.jpg", alt: "Logo de la Aplicación", class: "img-fluid styled-image" %>
+  </div>
+</div>

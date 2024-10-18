@@ -1,0 +1,116 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+
+ @font-face {
+    font-family: 'HarryP';
+    src: url('HARRYP__.TTF') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    background-color: rgb(30, 30, 45); /* Un tono oscuro y misterioso */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .styled-image {
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
+  }
+  
+  .title {
+    font-family: 'HarryP', sans-serif; 
+    font-size: 100px;
+  }
+
+  .magical-card {
+    background: linear-gradient(135deg, #4b0082, #00bfff); /* Degradado mágico */
+    color: #fff; /* Texto blanco para contraste */
+    border: none; /* Sin borde para un aspecto limpio */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    position: relative; /* Para posicionar el pseudo-elemento */
+    overflow: hidden; /* Para ocultar el brillo fuera del borde */
+  }
+  
+  .magical-card:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%; /* Aumentar tamaño para que cubra la tarjeta */
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%); /* Efecto de brillo */
+    transform: translate(-50%, -50%) scale(0); /* Iniciar oculto */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transiciones suaves */
+    pointer-events: none; /* Ignorar eventos del mouse */
+    opacity: 0; /* Iniciar invisible */
+  }
+  
+  .magical-card:hover:before {
+    transform: translate(-50%, -50%) scale(1); /* Escalar al pasar el mouse */
+    opacity: 1; /* Hacer visible el brillo */
+  }
+  
+  .magical-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra al pasar el mouse */
+  }
+  
+  .magical-navbar {
+    background: linear-gradient(135deg, rgba(40, 10, 60, 0.9), rgba(10, 10, 30, 0.9)); /* Degradado de color oscuro */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para darle profundidad */
+    padding: 1rem 0; /* Espaciado interno */
+  }
+  
+  .magical-navbar .navbar-text {
+    font-size: 2rem; /* Tamaño de fuente más grande */
+    color: #fff; /* Texto blanco para contraste */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+    transition: color 0.3s; /* Transición suave para cambios de color */
+  }
+  
+  .magical-navbar .navbar-text:hover {
+    color: #ffff00; /* Cambio de color al pasar el mouse */
+  }
+  
+  .title {
+    font-family: 'HarryP', sans-serif; /* Asegúrate de que estás utilizando la fuente correcta */
+    font-size: 6rem; /* Tamaño del texto */
+    color: #ffffff; /* Color del texto */
+    text-shadow: 
+      0 0 5px rgba(255, 255, 255, 0.9), /* Sombra blanca */
+      0 0 10px rgba(255, 215, 0, 0.7), /* Sombra dorada */
+      0 0 15px rgba(255, 215, 0, 0.5); /* Sombra dorada más tenue */
+    animation: pulse 1.5s infinite; /* Pulsar */
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05); /* Aumentar tamaño */
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
