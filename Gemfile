@@ -59,4 +59,4 @@ end
 # Añadir la gema dotenv-rails al Gemfile:
 gem "dotenv-rails", groups: [ :development, :test ]
 
-gem "faker", "~> 3.0"
+gem "faker", "~> 3.5"
